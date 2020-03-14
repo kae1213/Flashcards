@@ -17,7 +17,7 @@ This version of the app enables the user to create muiltiple flashcards,  be abl
 ## Optional
 - [X] User can delete a flashcard
 - [ ] User can edit existing flashcard
-- [] User can store multiple choice questions
+- [ ] User can store multiple choice questions
 
 
 ## Lab 2
