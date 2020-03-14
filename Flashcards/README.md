@@ -7,8 +7,7 @@ This version of the app enables the user to create muiltiple flashcards,  be abl
 
 ### App Walk-though
 
-<img src="http://g.recordit.co/w2pxfIenm5.gif" width=200><br>
-<img src="http://g.recordit.co/DA0eXeNF4l.gif" width=200><br>
+<img src="http://g.recordit.co/w2pxfIenm5.gif" width=200><br><img src="http://g.recordit.co/DA0eXeNF4l.gif" width=200><br>
 
 
 ## Required
