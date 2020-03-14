@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,26 +12,34 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Flashcards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fHb-cV-03m">
-                                <rect key="frame" x="66" y="200" width="243" height="125"/>
+                                <rect key="frame" x="66" y="244" width="282" height="310"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brasilia" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19u-rl-jaa" userLabel="Brasilia ">
-                                        <rect key="frame" x="0.0" y="0.0" width="243" height="125"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="282" height="310"/>
                                         <color key="backgroundColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is the Capital of Brazil?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J4D-5m-7NS">
-                                        <rect key="frame" x="0.0" y="0.0" width="243" height="125"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="282" height="310"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLf-tV-rkm">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="❌"/>
+                                        <connections>
+                                            <action selector="didTapOnDelete:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ScH-yc-f69"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <gestureRecognizers/>
@@ -50,12 +58,30 @@
                                 </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="JM7-4c-F9t">
-                                <rect key="frame" x="124" y="565" width="127" height="52"/>
+                                <rect key="frame" x="124" y="760" width="166" height="52"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                 <state key="normal" title="+"/>
                                 <connections>
                                     <segue destination="F03-Ox-46A" kind="presentation" id="YFd-Ro-dv3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="va8-YB-Fal">
+                                <rect key="frame" x="330" y="832" width="50" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="didTapOnNext:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kiA-sR-MCD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ae5-Bu-fQl">
+                                <rect key="frame" x="49" y="832" width="50" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Prev"/>
+                                <connections>
+                                    <action selector="didTapOnPrev:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Urm-oa-PwD"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -74,6 +100,8 @@
                     <connections>
                         <outlet property="backLabel" destination="19u-rl-jaa" id="QQT-KJ-ur1"/>
                         <outlet property="frontLabel" destination="J4D-5m-7NS" id="khR-jl-Zqe"/>
+                        <outlet property="nextButton" destination="va8-YB-Fal" id="vUw-8T-oIY"/>
+                        <outlet property="prevButton" destination="ae5-Bu-fQl" id="AKl-vW-YxB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -83,23 +111,23 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="138.40000000000001" y="118.96551724137932"/>
+            <point key="canvasLocation" x="137.68115942028987" y="118.52678571428571"/>
         </scene>
         <!--Creation View Controller-->
         <scene sceneID="vYG-do-UQP">
             <objects>
                 <viewController id="Lc8-KJ-fgO" customClass="CreationViewController" customModule="Flashcards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dZh-2v-yV3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Answer" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lzF-CN-gNs">
-                                <rect key="frame" x="84" y="240" width="207" height="34"/>
+                                <rect key="frame" x="84" y="240" width="246" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Question" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Goe-P0-z6j">
-                                <rect key="frame" x="84" y="164" width="207" height="34"/>
+                                <rect key="frame" x="84" y="164" width="246" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -143,7 +171,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="F03-Ox-46A" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="s8u-rD-o53">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

@@ -1,7 +1,30 @@
+
+## Lab 3
+
+### App Description
+This version of the app enables the user to create muiltiple flashcards,  be able to go through the cards, allow the cards to be saved on the disc, and be read from the disc. This version of the app also allows user to delete a select card, and I was able to know how to run the app on my own phone. 
+
+
+### App Walk-though
+
+<img src="http://g.recordit.co/w2pxfIenm5.gif" width=200><br>
+<img src="http://g.recordit.co/DA0eXeNF4l.gif" width=200><br>
+
+
+## Required
+- [X] User can browse through multiple flashcards
+- [X] User can re-open the app and see previously created flashcards
+- [ ] Push code to GitHub
+## Optional
+- [X] User can delete a flashcard
+- [ ] User can edit existing flashcard
+- [] User can store multiple choice questions
+
+
 ## Lab 2
 
 ### App Description
-`This app lets the user see an excisting flashcard with a  question on the front, and when pressed it flips to show the answer. This also allows the user to rewrite the flashcard by pressing the (+) button, it takes the user to a screen where they are able to type a new question and answer, and once done it rewrites the flashcard.
+This app lets the user see an excisting flashcard with a  question on the front, and when pressed it flips to show the answer. This also allows the user to rewrite the flashcard by pressing the (+) button, it takes the user to a screen where they are able to type a new question and answer, and once done it rewrites the flashcard.
 
 ### App Walk-though
 
@@ -42,3 +65,12 @@ http://g.recordit.co/i4avZx73BK.gif
 - [X] Toggle the flashcard between the question side and the answer side
 - [ ] Style the question and answer side of the card to better distinguish between the two sides
 - [ ] Add selectable multiple choice answers beneath the card
+
+
+// this is the first mandatory video
+// http://g.recordit.co/w2pxfIenm5.gif
+
+//second one
+//http://g.recordit.co/DA0eXeNF4l.gif
+
+

@@ -11,10 +11,10 @@ import UIKit
 class CreationViewController: UIViewController {
     
     var flashcardsController: ViewController!
-    
     @IBOutlet weak var didTapOnCancel: UIBarButtonItem!
     @IBOutlet weak var questionBar: UITextField!
     @IBOutlet weak var answerBar: UITextField!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
