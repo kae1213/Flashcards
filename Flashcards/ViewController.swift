@@ -14,13 +14,14 @@ struct Flashcard{
 }
 
 class ViewController: UIViewController {
-   
     
     //IBA Outlets
+    @IBOutlet weak var card: UIView!
     @IBOutlet weak var frontLabel: UILabel!
     @IBOutlet weak var backLabel: UILabel!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var prevButton: UIButton!
+    @IBOutlet weak var plusButton: UIButton!
     
     //array that will hold the flashcards
     var flashcards = [Flashcard]()
@@ -28,10 +29,17 @@ class ViewController: UIViewController {
     //start of flashcard index
     var currentIndex = 0
 
-    
     override func viewDidLoad() {
+        
+        card.layer.cornerRadius = 20.0
+        card.clipsToBounds = true
+
+        card.layer.shadowRadius = 15.0
+        card.layer.shadowOpacity = 0.8
+
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
         
         // Read saved flashcards
         readSavedFlashcards()
@@ -45,18 +53,63 @@ class ViewController: UIViewController {
             updateNextPrevButtons()
         }
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // First start with the flashcard invisible and slightl smaller in size
+        card.alpha = 0.0
+        card.transform = CGAffineTransform.identity.scaledBy(x: 0.75, y: 0.75)
+        
+        // animating Buttons
+        nextButton.alpha = 0.0
+        nextButton.transform = CGAffineTransform.identity.scaledBy(x: 0.75, y: 0.75)
+        
+        prevButton.alpha = 0.0
+        prevButton.transform = CGAffineTransform.identity.scaledBy(x: 0.75, y: 0.75)
+        
+        plusButton.alpha = 0.0
+        plusButton.transform = CGAffineTransform.identity.scaledBy(x: 0.75, y: 0.75)
+        
+        
+        // Animation
+        UIView.animate(withDuration: 0.6, delay: 0.5, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations: {
+            self.card.alpha = 1.0
+            self.card.transform = CGAffineTransform.identity
+        })
+        UIView.animate(withDuration: 0.6, delay: 0.5, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations: {
+            self.nextButton.alpha = 1.0
+            self.nextButton.transform = CGAffineTransform.identity
+        })
+        UIView.animate(withDuration: 0.6, delay: 0.5, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations: {
+            self.prevButton.alpha = 1.0
+            self.prevButton.transform = CGAffineTransform.identity
+        })
+        UIView.animate(withDuration: 0.6, delay: 0.5, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations: {
+            self.plusButton.alpha = 1.0
+            self.plusButton.transform = CGAffineTransform.identity
+        })
+    }
 
     @IBAction func didTapOnFlashcard(_ sender: Any) {
+        flipFlashcard()
+    }
+    
+    func flipFlashcard(){
         
-        if (frontLabel.isHidden == false){
-            frontLabel.isHidden = true
-        }
+        UIView.transition(with: card, duration: 0.3, options: .transitionFlipFromRight, animations: {
+            if (self.frontLabel.isHidden == false){
+                self.frontLabel.isHidden = true
+            }
 
-        else if(frontLabel.isHidden == true){
-            frontLabel.isHidden = false
-        }
+            else if(self.frontLabel.isHidden == true){
+                self.frontLabel.isHidden = false
+            }
+            
+        })
         
     }
+    
+    
     
     @IBAction func didTapOnDelete(_ sender: Any) {
         
@@ -86,7 +139,6 @@ class ViewController: UIViewController {
         if (currentIndex > flashcards.count - 1){
             currentIndex = flashcards.count - 1
             
-
         }
         
         /*
@@ -155,6 +207,10 @@ class ViewController: UIViewController {
         
         //update Buttons
         updateNextPrevButtons()
+        
+        // Animation
+        animateCardIn()
+      
     }
     
     @IBAction func didTapOnNext(_ sender: Any) {
@@ -162,10 +218,13 @@ class ViewController: UIViewController {
         currentIndex = currentIndex + 1
         
         //update labels
-        updateLabels()
+        //updateLabels()
         
         //update Buttons
         updateNextPrevButtons()
+        
+        // Animating card out
+        animateCardOut()
     }
     
     func updateNextPrevButtons(){
@@ -222,13 +281,31 @@ class ViewController: UIViewController {
             }
             flashcards.append(contentsOf: savedCards)
         
-        
         }
-    
-
-    
 
     }
-
-
+    
+    func animateCardOut(){
+        UIView.animate(withDuration: 0.3, animations: {
+            self.card.transform = CGAffineTransform.identity.translatedBy(x: -300.0, y: 0.0)
+        }, completion: { finished in
+        
+        
+        // Update Labels
+        self.updateLabels()
+        
+        // Run other animation
+        self.animateCardIn()
+        })
+    }
+    
+    func animateCardIn(){
+        
+        // Start on the right side (don't animate this)
+        card.transform = CGAffineTransform.identity.translatedBy(x: 300, y: 0.0)
+        
+        UIView.animate(withDuration: 0.3) {
+            self.card.transform = CGAffineTransform.identity
+        }
+    }
 }
