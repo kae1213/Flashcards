@@ -6,7 +6,7 @@ This version of the app uploads artwork for the app icom, be able to see a splas
 ### App Walk-though
 
 
-<img src="http://g.recordit.co/x9R541NJNF.gif" width=200><br>
+<img src="http://g.recordit.co/x9R541NJNF.gif" width=500><br>
 
 
 
