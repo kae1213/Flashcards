@@ -4,6 +4,7 @@
 This version of the app uploads artwork for the app icom, be able to see a splash screen, animations seen when flipping the flash card, and an animation when going to the next flash card or the one before. At the same time animation are included when a user opens an app, and views are layed out to be compatibel for any iOS device.
 
 ### App Walk-though
+*** GIF file no longer found 🥲***
 
 
 <img src="http://g.recordit.co/x9R541NJNF.gif" width=500><br>
